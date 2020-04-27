@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-number = 98
-print("{0:d} Battery street".format(number))
+number = 3.14159
+print("Float: {0:.2f}".format(number))
