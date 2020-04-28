@@ -11,10 +11,10 @@ int check_cycle(listint_t *list)
 	listint_t *header = list;
 	listint_t *checker = header;
 
-	while (header != NULL && checker != NULL && check->next != NULL)
+	while (header != NULL && checker != NULL && checker->next != NULL)
 	{
 		header = header->next;
-		checker = check->next->next;
+		checker = checker->next->next;
 
 		if (checker == header)
 		{
