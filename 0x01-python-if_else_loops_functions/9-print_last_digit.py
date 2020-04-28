@@ -2,8 +2,9 @@
 def print_last_digit(number):
 
     multiple = 1
-    x = number
+    x = abs(number)
     res = 0
+    result = 0
 
     while x:
         if (x / 10) >= 1:
