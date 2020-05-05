@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
     if my_list:
-        my_cpylist = my_list.copy()
-        if len(my_list) < idx or idx < 0:
-            return my_cpylist
+        if idx >= 0 and idx <= len(my_list):
+            my_cpylst = my_list.copy()
+            my_cpylst[idx] = element
+            return (my_cpylst)
         else:
-            my_cpylist[idx] =  element
-            return my_cpylist
+            return (my_list)
+    else:
+        return (my_list)
