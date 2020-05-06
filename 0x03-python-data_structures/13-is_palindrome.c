@@ -7,30 +7,23 @@
 */
 int is_palindrome(listint_t **head)
 {
-	int len = 1;
-	int i, j = 0;
-	listint_t *pivot = NULL;
+	listint_t *list = (*head);
+	int elements[4096];
+	int i = 0, j;
 
-	if (*head == NULL || head == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
 
-	pivot = *head;
-	while (pivot->next != NULL)
+	while (list)
 	{
-		len++;
-		pivot = pivot->next;
+		elements[i] = list->n;
+		i++;
+		list = list->next;
 	}
-	int array[len];
-
-	pivot = *head;
-	for (i = 0; i < len; i++)
+	i--;
+	for (j = 0; j <= i ; i--, j++)
 	{
-		array[i] = pivot->n;
-		pivot = pivot->next;
-	}
-	for (i = 0, j = (len - 1); i < j; i++, j--)
-	{
-		if (array[i] != array[j])
+		if (elements[i] != elements[j])
 			return (0);
 	}
 	return (1);
