@@ -10,10 +10,9 @@ int is_palindrome(listint_t **head)
 	int i, j = 0;
 	listint_t *pivot = NULL;
 
-	if (*head == NULL || head == NULL)
-		return (1);
-
 	pivot = *head;
+	if (*head == NULL || pivot->next == NULL)
+		return (1);
 	while (pivot->next != NULL)
 	{
 		len++;
