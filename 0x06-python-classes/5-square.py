@@ -7,8 +7,8 @@ class Square:
     def __init__(self, size=0):
         """Initializes the class Square
         Arg
-            size: size to initializate __size
-        """
+            size: size to initializate __size"""
+
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -53,6 +53,8 @@ class Square:
         Returns: Nothing
 
         """
+        if self.__size == 0:
+            print("")
         for i in range(0, self.__size):
             for j in range(0, self.__size):
                 print("#", end="")
