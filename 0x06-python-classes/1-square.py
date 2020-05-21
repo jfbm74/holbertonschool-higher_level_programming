@@ -3,10 +3,10 @@
 
 
 class Square:
-    """ Class Square constuctor method"""
     def __init__(self, size):
-        """Initializes the class Square
+        """
+        Initializes with size (no type/value verification)
         Arg
-            size: size to initializate __size
+            size: size of the square
         """
         self.__size = size
