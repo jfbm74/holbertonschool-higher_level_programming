@@ -3,32 +3,31 @@
 
 
 class Square:
-    """ Class Square constuctor method"""
+    """ Class Square with constuctor method"""
     def __init__(self, size=0):
-        """
-        Initializes with size (no type/value verification)
+        """Initializes the class Square
         Arg
-            size: size of the square
+            size: size to initializate __size
         """
-        if not type(size) is int:
+        if type(size) != int:
             raise TypeError("size must be an integer")
-        if size < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
 
     def area(self):
         """
-        Calculates square area
-        Returns: area
-
+        Calculate the area of a square
+        Returns:
+            The area of the square
         """
         return self.__size ** 2
 
     @property
     def size(self):
         """
-        getter function for size
+        getter function of size
         Returns:
             size of square
         """
@@ -37,13 +36,12 @@ class Square:
     @size.setter
     def size(self, val):
         """
-        setter function for attribute size
+        setter function of attribute size
         Args:
-            val: Set value for __size
-        Returns: Nothing
+            value: value for __size
         """
         if type(val) is not int:
             raise TypeError("size must be an integer")
         if val < 0:
             raise ValueError("size must be >= 0")
-            self.__size = val
+        self.__size = val
