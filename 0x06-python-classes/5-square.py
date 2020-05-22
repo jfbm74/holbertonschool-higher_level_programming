@@ -7,8 +7,8 @@ class Square:
     def __init__(self, size=0):
         """Initializes the class Square
         Arg
-            size: size to initializate __size"""
-
+            size: size to initializate __size
+        """
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -23,6 +23,18 @@ class Square:
             The area of the square
         """
         return self.__size ** 2
+
+    def my_print(self):
+        """
+        Print the square
+        """
+        if self.size == 0:
+            print("")
+        else:
+            for i in range(self.size):
+                for i in range(self.size):
+                    print("#", end="")
+                print("")
 
     @property
     def size(self):
@@ -45,17 +57,3 @@ class Square:
         if val < 0:
             raise ValueError("size must be >= 0")
         self.__size = val
-
-    def my_print(self):
-        """
-        prints in stdout the square with the character #:
-            if size is equal to 0, print an empty line
-        Returns: Nothing
-
-        """
-        if self.__size == 0:
-            print("")
-        for i in range(0, self.__size):
-            for j in range(0, self.__size):
-                print("#", end="")
-            print("")
