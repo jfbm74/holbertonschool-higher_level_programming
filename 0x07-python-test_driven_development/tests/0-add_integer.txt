@@ -40,11 +40,11 @@ Checking sum for 1 integer and string:
     ...
     TypeError: b must be an integer
 
-Checking float overflow:
-    >>> add_integer(1, 2.1 ** 30000000000)
-    Traceback (most recent call last):
-    ...
-    OverflowError: (34, 'Numerical result out of range')
+Checking for passed inf:
+	 >>> add_integer(1, float('inf'))
+	 Traceback (most recent call last):
+	 ...
+	 OverflowError: cannot convert float infinity to integer
 
 Checking for passed inf:
 	 >>> add_integer(1, float('nan'))
