@@ -1,0 +1,23 @@
+The Module "4-print_square"
+=========================
+
+Using function "print_square"
+==============================
+
+Importing function from module:
+    >>> print_square = __import__('4-print_square').print_square
+
+Checking for module in docstring:
+    >>> m = __import__('4-print_square').__doc__
+    >>> len(m) > 1
+    True
+
+Checking for function in docstring:
+    >>> f =  __import__('4-print_square').print_square.__doc__
+    >>> len(f) > 1
+    True
+
+Checking for case: 0
+    >>> print_square(0)
+
+
