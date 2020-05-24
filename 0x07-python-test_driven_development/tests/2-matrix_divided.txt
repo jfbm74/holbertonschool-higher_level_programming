@@ -32,6 +32,10 @@ Checking for case: [[3, 9], [12, 15]] / -3
     >>> matrix_divided([[3, 9], [12, 15]], -3)
     [[-1.0, -3.0], [-4.0, -5.0]]
 
+Checking for case: list of lists of integers / div= float(inf) => all values == -1.0
+    >>> matrix_divided([[2, 9], [12, 15]], float('inf'))
+    [[0.0, 0.0], [0.0, 0.0]]
+
 HANDLE EXCEPTIONS
 ===================
 
@@ -59,3 +63,16 @@ Checking for case:   List of Lists of integers / div= string
     Traceback (most recent call last):
     ...
     TypeError: div must be a number
+
+Checking for case:  Missing 1 argument
+    >>> matrix_divided([[3, 9], [12, 15]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Checking for case:  Missing 1 argument
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
