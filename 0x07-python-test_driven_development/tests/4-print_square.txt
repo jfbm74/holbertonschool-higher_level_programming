@@ -21,3 +21,20 @@ Checking for case: 0
     >>> print_square(0)
 
 
+Checking for case: size= not integer => TypeError: size must be an integer
+    >>> print_square("8")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Checking for case: size= integer < 0 => ValueError: size must be >= 0
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Checking for case: missing one argument
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
