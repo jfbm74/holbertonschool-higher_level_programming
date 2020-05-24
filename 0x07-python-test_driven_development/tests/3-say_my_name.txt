@@ -1,0 +1,41 @@
+The "3-say_my_name module"
+===========================
+
+Using 3-say_my_name module
+===========================
+
+Importing the function from module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Checking for module docstring:
+    >>> m = __import__('3-say_my_name').__doc__
+    >>> len(m) > 1
+    True
+
+Checking for function in docstring:
+    >>> f = __import__('3-say_my_name').say_my_name.__doc__
+    >>> len(f) > 1
+    True
+
+REGULAR CASES
+=================
+
+Checking case for: “Bob” / “Lenon”
+    >>> say_my_name("Bob", "Lenon")
+    My name is Bob Lenon
+
+Checking case for: "Bob"
+    say_my_name("Bob")
+    My name is Bob
+
+Checking case for: "Bob" / 12
+   >>> say_my_name("Bob", 12)
+   last_name must be a string
+
+Checking case for: 12 / "Lenon"
+    >>> say_my_name(12, "Lenon")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+
