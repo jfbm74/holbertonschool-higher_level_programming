@@ -5,6 +5,7 @@ This module prints a square with the character #
 Return: Nothing
 """
 
+
 def print_square(size):
     """
     Function print_square
@@ -27,5 +28,3 @@ def print_square(size):
         for j in range(size):
             print("#", end="")
         print("")
-
-    pass
