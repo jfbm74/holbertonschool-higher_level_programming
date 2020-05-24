@@ -1,0 +1,41 @@
+The "5-text_indentation" Module
+===============================
+
+Using "5-text_indentation" Module
+==================================
+
+Import module from file:
+    >>> text_indentation =  __import__("5-text_indentation").text_indentation
+
+Checking module in docstring:
+    >>> m = __import__("5-text_indentation").__doc__
+    >>> len(m) > 1
+    True
+
+Checking function in docstring:
+    >>> f = __import__("5-text_indentation").text_indentation.__doc__
+    >>> len(f) > 1
+    True
+
+REGULAR CASES
+=============
+
+Checking for case: “Holberton School”
+    >>> text_indentation("Holberton School")
+    Holberton School
+
+Checking for case: “Holberton. School? How are you: John”
+    >>> text_indentation("Holberton. School? How are you: John")
+    Holberton.
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+    How are you:
+    <BLANKLINE>
+    John
+
+Checking for case: 12 => TypeError: text must be a string
+    >>> text_indentation(12)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
