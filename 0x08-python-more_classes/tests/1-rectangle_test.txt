@@ -1,0 +1,9 @@
+The "1-rectangle" mode
+========================
+
+Loading module from 1-main.py
+===============================
+
+Loading module from 1-rectangle.py
+    >>>
+
