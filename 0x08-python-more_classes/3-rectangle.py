@@ -100,7 +100,7 @@ class Rectangle:
         :rtype: str
         """
         my_str = ""
-
+        if self.width != 0 and self.__height != 0:
         my_str = my_str + "\n".join("#" * self.__width
                                     for j in range(self.__height))
         return my_str
