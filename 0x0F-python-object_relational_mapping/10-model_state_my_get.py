@@ -1,24 +1,27 @@
 #!/usr/bin/python3
-"""
-prints the State object with the name passed as argument from a database
-"""
+""" print all State from the database"""
 
-import sqlalchemy
+import sys
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sys import argv
-from model_state import Base, State
 
-if __name__ == "__main__":
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
-                                                                    argv[2],
-                                                                    argv[3]))
-    Base.metadata.create_all(eng)
-    Session = sessionmaker(bind=eng)
-    session = Session()
-    state = session.query(State).filter_by(name=argv[4]).first()
-    if state is not None:
-        print(str(state.id))
+if __name__ == '__main__':
+    MY_USER = sys.argv[1]
+    MY_PASS = sys.argv[2]
+    MY_DB = sys.argv[3]
+    STATE = sys.argv[4]
+
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+
+    s = sessionmaker(bind=engine)()
+
+    _query = s.query(State).filter(State.name == STATE).first()
+    if _query:
+        print(_query.id)
     else:
-        print("Not found")
-    session.close()
+        print('Not found')
+
+    s.close()

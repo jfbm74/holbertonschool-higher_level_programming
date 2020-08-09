@@ -1,21 +1,30 @@
 #!/usr/bin/python3
-"""
-python script that lists all states from the database hbtn_0e_0_usa with
-a given name
-"""
+""" print all states start by N from the database hbtn_0e_0_usa"""
 
 import MySQLdb
-from sys import argv
+import sys
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3], charset="utf8")
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
-    id ASC".format(argv[4]))
-    rows = cursor.fetchall()
+if __name__ == '__main__':
+    MY_USER = sys.argv[1]
+    MY_PASS = sys.argv[2]
+    MY_DB = sys.argv[3]
+    WORD = sys.argv[4]
+
+    MY_HOST = "localhost"
+
+    db = MySQLdb.connect(
+        host=MY_HOST,
+        port=3306,
+        user=MY_USER,
+        passwd=MY_PASS,
+        db=MY_DB)
+
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{:}'"
+                "ORDER BY id;".format(WORD))
+    rows = cur.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
-    cursor.close()
+        print(row)
+    cur.close()
     db.close()
