@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" class State and an instance Base = declarative_base()"""
+""" class State and instance Base"""
 
 
 from sqlalchemy import Column, Integer, String
