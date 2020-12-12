@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ print all State from the database"""
 
