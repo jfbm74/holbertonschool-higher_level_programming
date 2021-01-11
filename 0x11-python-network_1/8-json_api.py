@@ -18,7 +18,7 @@ if __name__ == "__main__":
     try:
         json = answer.json()
         if json:
-            print("[{}] {}".format(json['id'],json['name']))
+            print("[{}] {}".format(json['id'], json['name']))
         else:
             print("No result")
     except Exception:
