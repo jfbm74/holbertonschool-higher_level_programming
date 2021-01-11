@@ -14,7 +14,7 @@ if __name__ == "__main__":
         query = {'q': argv[1]}
     else:
         query = {'q': ""}
-    answer = requests.post('http://0.0.0.0:5000/search_user', data)
+    answer = requests.post('http://0.0.0.0:5000/search_user', query)
     try:
         json = answer.json()
         if json:
